@@ -26,6 +26,7 @@ python do_populate_lic() {
     destdir = os.path.join(d.getVar('LICSSTATEDIR'), d.getVar('PN'))
     copy_license_files(lic_files_paths, destdir)
     info = get_recipe_info(d)
+
     with open(os.path.join(destdir, "recipeinfo"), "w") as f:
         for key in sorted(info.keys()):
             f.write("%s: %s\n" % (key, info[key]))
@@ -50,6 +51,7 @@ def get_recipe_info(d):
     info["PV"] = d.getVar("PV")
     info["PR"] = d.getVar("PR")
     info["LICENSE"] = d.getVar("LICENSE")
+    info["SRC_URI"] = d.getVar("SRC_URI")
     return info
 
 def add_package_and_files(d):
