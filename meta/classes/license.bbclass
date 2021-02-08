@@ -47,11 +47,13 @@ python perform_packagecopy_prepend () {
 perform_packagecopy[vardeps] += "LICENSE_CREATE_PACKAGE"
 
 def get_recipe_info(d):
+    import json
     info = {}
     info["PV"] = d.getVar("PV")
     info["PR"] = d.getVar("PR")
     info["LICENSE"] = d.getVar("LICENSE")
     info["SRC_URI"] = d.getVar("SRC_URI")
+    info["DESCRIPTION"] = json.dumps(d.getVar("DESCRIPTION"))
     return info
 
 def add_package_and_files(d):
