@@ -54,6 +54,7 @@ def get_recipe_info(d):
     info["LICENSE"] = d.getVar("LICENSE")
     info["SRC_URI"] = d.getVar("SRC_URI")
     info["DESCRIPTION"] = json.dumps(d.getVar("DESCRIPTION"))
+    info["FILENAME"] = d.getVar("BB_FILENAME")
     return info
 
 def add_package_and_files(d):
