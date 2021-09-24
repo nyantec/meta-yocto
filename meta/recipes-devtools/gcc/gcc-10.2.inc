@@ -89,6 +89,7 @@ EXTRA_OECONF_BASE = "\
     ${SSP} \
     --enable-libitm \
     --enable-lto \
+    --disable-cet \
     --disable-bootstrap \
     --with-system-zlib \
     ${@'--with-linker-hash-style=${LINKER_HASH_STYLE}' if '${LINKER_HASH_STYLE}' else ''} \
@@ -106,6 +107,7 @@ EXTRA_OECONF_INITIAL = "\
     --disable-libquadmath \
     --with-system-zlib \
     --disable-lto \
+    --disable-cet \
     --disable-plugin \
     --enable-linker-build-id \
     --enable-decimal-float=no \
