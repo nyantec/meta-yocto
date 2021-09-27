@@ -70,9 +70,7 @@ do_install_append() {
 	fi
 }
 
-FILES_${PN}-dev += "${base_libdir}/*.so"
-
 # pam files
-FILES_${PN} += "${base_libdir}/security/*.so"
+FILES_${PN} += "${base_libdir}/security/*.so ${base_libdir}/*.so"
 
 BBCLASSEXTEND = "native nativesdk"
