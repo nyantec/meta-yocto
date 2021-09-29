@@ -735,3 +735,8 @@ do_cleanall[nostamp] = "1"
 
 
 EXPORT_FUNCTIONS do_fetch do_unpack do_configure do_compile do_install do_package
+
+export LOCALE_ARCHIVE = "/usr/lib/locale/locale-archive"
+export hardeningDisable = "all"
+export NIX_DONT_SET_RPATH = "1"
+export NIX_CC_WRAPPER_TARGET_HOST_x86_64_unknown_linux_gnu = "1"
